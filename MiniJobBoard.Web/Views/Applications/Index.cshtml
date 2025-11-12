@@ -1,0 +1,38 @@
+﻿@model IEnumerable<MiniJobBoard.Web.Models.Application>
+
+<h2>Submitted Applications</h2>
+
+<a href="/Jobs" class="btn btn-secondary mb-3">Back to Jobs</a>
+
+@if (!Model.Any())
+{
+    <p>No applications submitted yet.</p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Applicant Name</th>
+                <th>Email</th>
+                <th>Resume</th>
+                <th>Job Title</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var app in Model)
+            {
+                <tr>
+                    <td>@app.ApplicantName</td>
+                    <td>@app.Email</td>
+                    <td>@app.Resume</td>
+                    <td>@app.Job?.Title</td>
+                </tr>
+            }
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+            }
+        </tbody>
+    </table>
+}

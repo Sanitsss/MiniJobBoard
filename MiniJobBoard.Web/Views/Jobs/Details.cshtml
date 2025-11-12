@@ -1,0 +1,12 @@
+﻿@model MiniJobBoard.Web.Models.Job
+
+@{
+    ViewData["Title"] = "Job Details";
+}
+
+<h2>@Model.Title</h2>
+<p><strong>Company:</strong> @Model.Company</p>
+<p><strong>Description:</strong> @Model.Description</p>
+
+<a class="btn btn-success" href="/Applications/Apply?jobId=@Model.Id">Apply for this Job</a>
+<a class="btn btn-secondary" href="/Jobs">Back to List</a>

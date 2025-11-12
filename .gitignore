@@ -1,0 +1,6 @@
+.vs/ 
+bin/ 
+obj/ 
+/MiniJobBoard.Web/bin/ 
+/MiniJobBoard.Web/obj/ 
+/MiniJobBoard.Web/.vs/ 
